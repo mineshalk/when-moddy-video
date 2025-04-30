@@ -21,7 +21,6 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           CHANNEL_ID: ${{ vars.CHANNEL_ID }}
-          CWD: ${{ github.workspace }}
         run: bun run scripts/fetch-youtube-data.ts
         
       - name: Commit and push if changed

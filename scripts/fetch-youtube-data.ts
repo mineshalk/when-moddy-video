@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-import { writeFile } from 'fs/promises';
+import { mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
 
 if (!process.env.CHANNEL_ID) {
@@ -55,11 +55,12 @@ async function fetchLatestVideo(): Promise<VideoData> {
 
 async function main() {
   try {
+    const path = join(process.cwd(), 'public/data/latest-video.json');
+    await mkdir(join(process.cwd(), 'public/data'), { recursive: true });
+
     const videoData = await fetchLatestVideo();
-    await writeFile(
-      join(process.env.CWD || process.cwd(), 'public/data/latest-video.json'),
-      JSON.stringify(videoData, null, 2)
-    );
+    await writeFile(path, JSON.stringify(videoData, null, 2));
+
     console.log('Successfully updated video data');
   } catch (error) {
     console.error('Error updating video data:', error);
