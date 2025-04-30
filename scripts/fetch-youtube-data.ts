@@ -57,7 +57,7 @@ async function main() {
   try {
     const videoData = await fetchLatestVideo();
     await writeFile(
-      join(process.cwd(), 'public/data/latest-video.json'),
+      join(process.env.CWD || process.cwd(), 'public/data/latest-video.json'),
       JSON.stringify(videoData, null, 2)
     );
     console.log('Successfully updated video data');
