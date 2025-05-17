@@ -43,11 +43,6 @@ jobs:
         with:
           path: ./out
 
-      - name: Add .nojekyll in out folder (for GitHub Pages)
-        run: |
-          echo "Creating .nojekyll file"
-          touch out/.nojekyll
-
   deploy:
     environment:
       name: github-pages
