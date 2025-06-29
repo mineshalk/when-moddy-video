@@ -19,7 +19,7 @@ export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-  ]
+  ],
 };
 
 export default function RootLayout({
@@ -27,8 +27,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  ReactDOM.preload('/data/latest-video.json', { as: 'fetch' })
-  
+  ReactDOM.preload("/data/latest-video.json", { as: "fetch" });
+
   return (
     <html lang="ru">
       <body className={`antialiased`}>
@@ -49,10 +49,7 @@ export default function RootLayout({
             с любовью <span className="opacity-50">💙</span>
           </div>
         </footer>
-        <MetrikaCounter
-          id={103117456}
-          options={{ trackHash: true, webvisor: true }}
-        />
+        <MetrikaCounter id={103117456} />
       </body>
     </html>
   );
