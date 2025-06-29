@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 import NoSSR from "react-no-ssr";
