@@ -39,7 +39,7 @@ export default function RootLayout({
           </div>
           <div className="hidden md:inline px-1">⋅</div>
           <div className="block md:inline">
-            Сделано{" "}
+            Сделал{" "}
             <a
               href="https://t.me/karpled"
               className="text-blue-300 dark:text-blue-600"
