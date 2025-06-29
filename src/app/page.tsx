@@ -1,5 +1,5 @@
 "use client";
-import {TimeSincePublished} from "../components";
+import { TimeSincePublished } from "../components";
 
 export default function Home() {
   return (
