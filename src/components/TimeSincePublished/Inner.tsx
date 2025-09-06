@@ -15,7 +15,7 @@ export default function Inner() {
   const { width, height } = useWindowSize();
 
   useEffect(() => {
-    fetch("/public/data/latest-video.json")
+    fetch("/data/latest-video.json")
       .then((res) => res.json())
       .then((data) => {
         setPublishedAt(new Date(data.publishedAt));
